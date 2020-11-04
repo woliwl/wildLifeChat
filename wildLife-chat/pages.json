@@ -1,0 +1,74 @@
+{
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarTitleText": "野动聊天器"
+		}
+	}    ,{
+            "path" : "pages/news/news",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/friends/friends",
+            "style" : {}
+        }
+    ],
+    
+    "subPackages":[
+        {
+            "root":"pagesChat",
+            "pages":[
+                {
+                    "path" : "chat",
+                    "style" : {
+                        "app-plus": {
+                            "softinputMode": "adjustResize"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "root":"pagesMsg",
+            "pages":[
+                {
+                    "path" : "msg",
+                    "style" : {}
+                }
+            ]
+        }
+    ],
+    
+    
+    
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": " ",
+        "transparentTitle":"always",
+		"navigationBarBackgroundColor": "#06A88E"
+	},
+    
+    "tabBar":{
+        "color": "#C0C0C0",
+        "selectedColor": "#06A88E",
+        "borderStyle": "white",
+        "backgroundColor": "#ffffff",
+        "height":"56rpx",
+        "list":[
+            {
+                "pagePath":"pages/news/news",
+                "iconPath":"static/img/news.png",
+                "selectedIconPath":"static/img/_news.png",
+                "text":"消息"
+            },
+            {
+                "pagePath":"pages/friends/friends",
+                "iconPath":"static/img/friend.png",
+                "selectedIconPath":"static/img/_friend.png",
+                "text":"好友"
+            }
+        ]
+    }
+    
+    
+}

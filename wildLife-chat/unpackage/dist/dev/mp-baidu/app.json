@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/news/news",
+    "pages/friends/friends"
+  ],
+  "subPackages": [
+    {
+      "root": "pagesChat",
+      "pages": [
+        "chat"
+      ]
+    },
+    {
+      "root": "pagesMsg",
+      "pages": [
+        "msg"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": " ",
+    "transparentTitle": "always",
+    "navigationBarBackgroundColor": "#06A88E"
+  },
+  "tabBar": {
+    "color": "#C0C0C0",
+    "selectedColor": "#06A88E",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "height": "56rpx",
+    "list": [
+      {
+        "pagePath": "pages/news/news",
+        "iconPath": "static/img/news.png",
+        "selectedIconPath": "static/img/_news.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/friends/friends",
+        "iconPath": "static/img/friend.png",
+        "selectedIconPath": "static/img/_friend.png",
+        "text": "好友"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
