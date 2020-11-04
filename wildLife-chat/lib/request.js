@@ -1,6 +1,6 @@
 // 封装uni-request
 import uniRequest from 'uni-request';
-let baseURL = 'http://127.0.0.1:8364'
+let baseURL = 'http://47.98.197.112:8364'
 
 function request(options) {
     let headers = {

@@ -8381,7 +8381,7 @@ var getUserData = function getUserData(param) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 var _uniRequest = _interopRequireDefault(__webpack_require__(/*! uni-request */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // 封装uni-request
-var baseURL = 'http://127.0.0.1:8364';
+var baseURL = 'http://47.98.197.112:8364';
 
 function request(options) {
   var headers = {

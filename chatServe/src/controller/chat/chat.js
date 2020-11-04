@@ -33,7 +33,7 @@ module.exports = class extends Base {
                 keyword:['like', '%'+data.chatMsg+'%']
             }
             ).find()
-            console.log(res)
+            return this.json(res)
         }
         
     }

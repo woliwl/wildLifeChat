@@ -17,7 +17,7 @@
                 "text": "pages/news/news"
             }
         ],
-        "selected": 0
+        "selected": -1
     },
     "condition": {},
     "host": "baiduboxapp",
