@@ -215,7 +215,7 @@ var _currentDate = _interopRequireDefault(__webpack_require__(/*! ../lib/current
       });
     },
 
-    send: function send() {
+    send: function send() {var _this2 = this;
       if (this.textMsg == '') {
         uni.showToast({
           title: "发送内容不能为空",
@@ -230,44 +230,49 @@ var _currentDate = _interopRequireDefault(__webpack_require__(/*! ../lib/current
           time: _currentDate.default.now() };
 
         this.chatContent.push(userContent);
-        // storeChat(userContent).then(res => {
-        //     this.textMsg = ''
-        // })
+        (0, _chat.storeChat)(userContent).then(function (res) {
+          _this2.textMsg = '';
+        });
         this.getReplys(userContent);
         this.scrollToBottom();
       }
     },
 
     // 获取回复
-    getReplys: function getReplys(msg) {
+    getReplys: function getReplys(msg) {var _this3 = this;
       var param = {
         openid: this.param.animalopenid,
         chatMsg: msg.chatMsg };
 
       (0, _chat.getReply)(param).then(function (res) {
-        console.log(res);
-        // let {
-        //     data
-        // } = res
-        // let animalContent = {
-        //     roomid: this.param.roomid,
-        //     openid: data.openid,
-        //     headimgurl: data.headimgurl,
-        //     chatMsg: data.chatMsg,
-        //     time: currentDate.filters(data.time)
-        // }
-        // this.chatContent.push(animalContent)
-        // storeChat(animalContent)
+        console.log(res);var
+        data = res.data;
+        if (JSON.stringify(data) == "{}") {
+          uni.showToast({
+            title: '太难了o(╥﹏╥)o，换个问题叭！',
+            icon: "none" });
+
+        } else {
+          var animalContent = {
+            roomid: _this3.param.roomid,
+            openid: data.openid,
+            headimgurl: data.headimgurl,
+            chatMsg: data.chatMsg,
+            time: _currentDate.default.filters(data.time) };
+
+          _this3.chatContent.push(animalContent);
+          (0, _chat.storeChat)(animalContent);
+        }
       });
       this.scrollToBottom();
     },
 
     //历史消息
-    getChat: function getChat() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var param, _yield$getChatContent, data;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-                param = { roomid: _this2.param.roomid };_context.next = 3;return (
+    getChat: function getChat() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var param, _yield$getChatContent, data;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                param = { roomid: _this4.param.roomid };_context.next = 3;return (
                   (0, _chat.getChatContent)(param));case 3:_yield$getChatContent = _context.sent;data = _yield$getChatContent.data;
-                _this2.chatContent = data;_context.next = 8;return (
-                  (0, _chat.getUserChat)());case 8:_this2.userChatlist = _context.sent.data;case 9:case "end":return _context.stop();}}}, _callee);}))();
+                _this4.chatContent = data;_context.next = 8;return (
+                  (0, _chat.getUserChat)());case 8:_this4.userChatlist = _context.sent.data;case 9:case "end":return _context.stop();}}}, _callee);}))();
     },
 
     focusTextarea: function focusTextarea(e) {
@@ -321,6 +326,13 @@ var _currentDate = _interopRequireDefault(__webpack_require__(/*! ../lib/current
     if (this.chatContent.length != 0) {
       this.scrollToBottom();
     }
+  },
+  onShow: function onShow() {
+    swan.setPageInfo({
+      title: '野动聊天器',
+      keywords: '聊天机器人，野生动物，聊天，百度，百度贴吧，濒危动物，百科',
+      description: '通过与动物聊天的方式来了解动物，了解他们的生活现状。' });
+
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-baidu/dist/index.js */ 1)["default"]))
 

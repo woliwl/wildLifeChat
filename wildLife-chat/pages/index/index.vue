@@ -62,8 +62,14 @@
         onLoad() {
             this.loginCor()
             this.getHeight()
+        },
+        onShow() {
+            swan.setPageInfo({
+                title:'野动聊天器',
+                keywords:'聊天机器人，野生动物，聊天，百度，百度贴吧，濒危动物，百科',
+                description:'通过与动物聊天的方式来了解动物，了解他们的生活现状。'
+            })
         }
-        
 	}
 </script>
 

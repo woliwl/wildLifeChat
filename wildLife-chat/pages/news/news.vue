@@ -30,7 +30,9 @@
                         <view class="news">{{item.newMsg}}</view>
                     </view>
                     <!-- 最新消息时间 -->
-                    <!-- <view class="time">13:32</view> -->
+                    <view class="dele" @click="deleteRoom(item.roomid)">
+                        <icon type="close" size="20"></icon>
+                    </view>
                 </view>
            </scroll-view>
        </view>
@@ -39,7 +41,7 @@
 
 <script>
     import uniSearchBar from '@/components/uni-search-bar/uni-search-bar.vue'
-    import {getChatRoomList} from '../../api/chat.js'
+    import {getChatRoomList,deleteRoom} from '../../api/chat.js'
     import {getAnimal} from '../../api/animal.js'
 	export default {
         components: {uniSearchBar},
@@ -75,11 +77,26 @@
               uni.navigateTo({
                   url:"../../pagesMsg/msg?openid="+openid
               })
+          },
+          
+          // 删除聊天室
+          deleteRoom(roomid){
+              deleteRoom({roomid:roomid}).then(res =>{
+                  console.log(res)
+                  this.getChatRoom()
+              })
           }
         },
-        onLoad() {
-            this.userData = uni.getStorageSync('userData'),
+        onShow() {
             this.getChatRoom()
+            swan.setPageInfo({
+                title:'野动聊天器',
+                keywords:'聊天机器人，野生动物，聊天，百度，百度贴吧，濒危动物，百科',
+                description:'通过与动物聊天的方式来了解动物，了解他们的生活现状。'
+            })
+        },
+        onLoad() {
+            this.userData = uni.getStorageSync('userData')
         }
 	}
 </script>
@@ -178,14 +195,12 @@
                     margin-top: -25rpx;
                 }
             }
-            .time{
+            .dele{
                 width: 20%;
-                color: #C0C0C0;
-                font-size: 24rpx;
+                color: #C0C0C0;                
                 height: 140rpx;
-                line-height: 140rpx;
+                line-height: 130rpx;
                 text-align: center;
-                
             }
         }
         

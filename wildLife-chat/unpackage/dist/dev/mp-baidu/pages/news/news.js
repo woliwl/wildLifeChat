@@ -175,6 +175,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var _chat = __webpack_require__(/*! ../../api/chat.js */ 34);
 var _animal = __webpack_require__(/*! ../../api/animal.js */ 35);var uniSearchBar = function uniSearchBar() {__webpack_require__.e(/*! require.ensure | components/uni-search-bar/uni-search-bar */ "components/uni-search-bar/uni-search-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-search-bar/uni-search-bar.vue */ 66));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
@@ -211,11 +213,26 @@ var _animal = __webpack_require__(/*! ../../api/animal.js */ 35);var uniSearchBa
       uni.navigateTo({
         url: "../../pagesMsg/msg?openid=" + openid });
 
+    },
+
+    // 删除聊天室
+    deleteRoom: function deleteRoom(roomid) {var _this2 = this;
+      (0, _chat.deleteRoom)({ roomid: roomid }).then(function (res) {
+        console.log(res);
+        _this2.getChatRoom();
+      });
     } },
 
-  onLoad: function onLoad() {
-    this.userData = uni.getStorageSync('userData'),
+  onShow: function onShow() {
     this.getChatRoom();
+    swan.setPageInfo({
+      title: '野动聊天器',
+      keywords: '聊天机器人，野生动物，聊天，百度，百度贴吧，濒危动物，百科',
+      description: '通过与动物聊天的方式来了解动物，了解他们的生活现状。' });
+
+  },
+  onLoad: function onLoad() {
+    this.userData = uni.getStorageSync('userData');
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-baidu/dist/index.js */ 1)["default"]))
 

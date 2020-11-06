@@ -46,4 +46,12 @@ export const getUserChat = () =>{
     })
 }
 
+export const deleteRoom = (param) =>{
+    return $request({
+        method:'POST',
+        url:"/chat/chat/deleteRoom",
+        data:param
+    })
+}
+
 

@@ -1,35 +1,18 @@
 {
-    "appInfo": {},
     "appid": "22847501",
+    "appInfo": {},
     "appkey": "",
-    "compilation-args": {
-        "common": {},
-        "options": [
-            {
-                "extra": {
-                    "compileArgs": "--module cmd",
-                    "ext": {},
-                    "index": "pages/news/news",
-                    "query": "",
-                    "scene": {}
-                },
-                "id": 0,
-                "text": "pages/news/news"
-            }
-        ],
-        "selected": -1
-    },
     "condition": {},
-    "host": "baiduboxapp",
-    "libVersion": "",
-    "projectname": "wildLife-chat",
     "setting": {
         "urlCheck": false
     },
+    "libVersion": "",
+    "projectname": "wildLife-chat",
+    "host": "baiduboxapp",
     "swan": {
         "baiduboxapp": {
-            "extensionJsVersion": "1.18.3",
-            "swanJsVersion": "3.220.16"
+            "swanJsVersion": "3.220.16",
+            "extensionJsVersion": "1.18.3"
         }
     }
 }

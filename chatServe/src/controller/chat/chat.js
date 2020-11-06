@@ -16,6 +16,12 @@ module.exports = class extends Base {
         return this.json(res)
     }
     
+    // 删除聊天室    
+    async deleteRoomAction(){
+        let data = this.post()
+        await this.model('chatRoom').where(data).delete()
+    }
+    
     //获取动物回复信息
     async getReplyAction() {
         let data = this.post()
@@ -33,6 +39,7 @@ module.exports = class extends Base {
                 keyword:['like', '%'+data.chatMsg+'%']
             }
             ).find()
+            console.log()
             return this.json(res)
         }
         

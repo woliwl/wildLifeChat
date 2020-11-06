@@ -124,12 +124,11 @@
   color: #C0C0C0;
   margin-top: -25rpx;
 }
-.newsBox .newsList .time {
+.newsBox .newsList .dele {
   width: 20%;
   color: #C0C0C0;
-  font-size: 24rpx;
   height: 140rpx;
-  line-height: 140rpx;
+  line-height: 130rpx;
   text-align: center;
 }
 
