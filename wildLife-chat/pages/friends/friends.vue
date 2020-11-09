@@ -26,7 +26,7 @@
         <!-- 搜索好友 -->
         <view class="search">
             <uni-search-bar placeholder="搜索" 
-            @input="search" cancelButton="none" 
+            @confirm="search" cancelButton="none" 
             bgColor="#EAECEC" radius="0"></uni-search-bar>
         </view>
         
@@ -71,7 +71,7 @@
 
 <script>
     import uniSearchBar from '@/components/uni-search-bar/uni-search-bar.vue'
-    import {getAnimal} from '../../api/animal.js'
+    import {getAnimal,searchAnimal} from '../../api/animal.js'
     import {createChatRoom} from '../../api/chat.js'
 	export default {
         components: {uniSearchBar},
@@ -91,7 +91,25 @@
         methods:{
           // 搜索好友
           search(value){
-              console.log(value)
+              searchAnimal(value).then(res =>{
+                  let {data} = res
+                  if(data == 'OK'){
+                      uni.showToast({
+                          title:"请输入搜索内容",
+                          icon:"none"
+                      })
+                  }else if(data.length == 0){
+                      uni.showToast({
+                          title:"暂无搜索内容",
+                          icon:"none"
+                      })
+                  }else {
+                      let jsonData = encodeURIComponent(JSON.stringify(data))
+                      uni.navigateTo({
+                          url:'../../pagesChat/search?searchRes=' + jsonData
+                      })
+                  }
+              })
           },
           //获取好友
           getAnimalData(){

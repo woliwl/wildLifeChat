@@ -10,11 +10,7 @@
            </view>
        </view>
        <!-- 搜索聊天记录 -->
-       <view class="search">
-           <uni-search-bar placeholder="搜索" 
-           @input="search" cancelButton="none" 
-           bgColor="#EAECEC" radius="0"></uni-search-bar>
-       </view>
+      
        <!-- 消息列表 -->
        <view class="newsBox" :style="{'height':Heigh*2-400 + 'rpx'}">
            <scroll-view scroll-y="true" class="scroll-Y" :style="{'height':Heigh*2-400 + 'rpx'}">
@@ -53,12 +49,7 @@
                 chatRoomList:[]
 			};
 		},
-        methods:{
-          // 搜索聊天记录
-          search(value){
-              console.log(value)
-          },
-          
+        methods:{          
           // 获取聊天室列表
           getChatRoom(){
               getChatRoomList().then(res =>{

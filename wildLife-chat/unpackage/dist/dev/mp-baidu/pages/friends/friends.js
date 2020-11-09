@@ -94,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   uniSearchBar: function() {
-    return __webpack_require__.e(/*! import() | components/uni-search-bar/uni-search-bar */ "components/uni-search-bar/uni-search-bar").then(__webpack_require__.bind(null, /*! @/components/uni-search-bar/uni-search-bar.vue */ 66))
+    return __webpack_require__.e(/*! import() | components/uni-search-bar/uni-search-bar */ "components/uni-search-bar/uni-search-bar").then(__webpack_require__.bind(null, /*! @/components/uni-search-bar/uni-search-bar.vue */ 72))
   }
 }
 var render = function() {
@@ -208,7 +208,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _animal = __webpack_require__(/*! ../../api/animal.js */ 35);
-var _chat = __webpack_require__(/*! ../../api/chat.js */ 34);var uniSearchBar = function uniSearchBar() {__webpack_require__.e(/*! require.ensure | components/uni-search-bar/uni-search-bar */ "components/uni-search-bar/uni-search-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-search-bar/uni-search-bar.vue */ 66));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _chat = __webpack_require__(/*! ../../api/chat.js */ 34);var uniSearchBar = function uniSearchBar() {__webpack_require__.e(/*! require.ensure | components/uni-search-bar/uni-search-bar */ "components/uni-search-bar/uni-search-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-search-bar/uni-search-bar.vue */ 72));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   components: { uniSearchBar: uniSearchBar },
   data: function data() {
@@ -227,7 +227,25 @@ var _chat = __webpack_require__(/*! ../../api/chat.js */ 34);var uniSearchBar = 
   methods: {
     // 搜索好友
     search: function search(value) {
-      console.log(value);
+      (0, _animal.searchAnimal)(value).then(function (res) {var
+        data = res.data;
+        if (data == 'OK') {
+          uni.showToast({
+            title: "请输入搜索内容",
+            icon: "none" });
+
+        } else if (data.length == 0) {
+          uni.showToast({
+            title: "暂无搜索内容",
+            icon: "none" });
+
+        } else {
+          var jsonData = encodeURIComponent(JSON.stringify(data));
+          uni.navigateTo({
+            url: '../../pagesChat/search?searchRes=' + jsonData });
+
+        }
+      });
     },
     //获取好友
     getAnimalData: function getAnimalData() {var _this = this;

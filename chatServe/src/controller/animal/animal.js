@@ -12,4 +12,17 @@ module.exports = class extends Base {
         let animalMsg = await this.model('animalData').where(data).find()
         return this.json(animalMsg)
     }
+    
+    // 搜索动物
+    async searchAnimalAction() {
+        // 关键字
+        let data = this.post()
+        if(data.value !== ''){
+            let searchRes = await this.model('animalData').where({
+                'nickname|othername|status|spread|grade|sign':
+                ['like','%'+data.value+'%']
+            }).select()
+            return this.json(searchRes)
+        }        
+    }
 }

@@ -92,11 +92,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components = {
-  uniSearchBar: function() {
-    return __webpack_require__.e(/*! import() | components/uni-search-bar/uni-search-bar */ "components/uni-search-bar/uni-search-bar").then(__webpack_require__.bind(null, /*! @/components/uni-search-bar/uni-search-bar.vue */ 66))
-  }
-}
+var components
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -173,12 +169,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
 var _chat = __webpack_require__(/*! ../../api/chat.js */ 34);
-var _animal = __webpack_require__(/*! ../../api/animal.js */ 35);var uniSearchBar = function uniSearchBar() {__webpack_require__.e(/*! require.ensure | components/uni-search-bar/uni-search-bar */ "components/uni-search-bar/uni-search-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-search-bar/uni-search-bar.vue */ 66));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _animal = __webpack_require__(/*! ../../api/animal.js */ 35);var uniSearchBar = function uniSearchBar() {__webpack_require__.e(/*! require.ensure | components/uni-search-bar/uni-search-bar */ "components/uni-search-bar/uni-search-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-search-bar/uni-search-bar.vue */ 72));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   components: { uniSearchBar: uniSearchBar },
   data: function data() {
@@ -190,11 +182,6 @@ var _animal = __webpack_require__(/*! ../../api/animal.js */ 35);var uniSearchBa
 
   },
   methods: {
-    // 搜索聊天记录
-    search: function search(value) {
-      console.log(value);
-    },
-
     // 获取聊天室列表
     getChatRoom: function getChatRoom() {var _this = this;
       (0, _chat.getChatRoomList)().then(function (res) {

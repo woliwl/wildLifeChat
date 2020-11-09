@@ -14,3 +14,11 @@ export const getAnimalMsg = (openid) =>{
         data:openid
     })
 }
+
+export const searchAnimal = (value) =>{
+    return $request({
+        method:'POST',
+        url:"/animal/animal/searchAnimal",
+        data:value
+    })
+}

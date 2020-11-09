@@ -25,6 +25,10 @@
                             "softinputMode": "adjustResize"
                         }
                     }
+                },
+                {
+                    "path" : "search",
+                    "style":{}
                 }
             ]
         },
