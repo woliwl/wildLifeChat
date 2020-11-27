@@ -2,34 +2,16 @@
     "appInfo": {},
     "appid": "22847501",
     "appkey": "",
-    "compilation-args": {
-        "common": {},
-        "options": [
-            {
-                "extra": {
-                    "compileArgs": "--module cmd",
-                    "ext": {},
-                    "index": "pages/friends/friends",
-                    "query": "",
-                    "scene": {}
-                },
-                "id": 0,
-                "text": "pages/friends/friends"
-            }
-        ],
-        "selected": 0
-    },
     "condition": {},
-    "host": "baiduboxapp",
     "libVersion": "",
+    "preview": {
+        "packageId": 627571
+    },
     "projectname": "wildLife-chat",
+    "publish": {
+        "version": "1.0.0"
+    },
     "setting": {
         "urlCheck": false
-    },
-    "swan": {
-        "baiduboxapp": {
-            "extensionJsVersion": "1.18.3",
-            "swanJsVersion": "3.220.16"
-        }
     }
 }

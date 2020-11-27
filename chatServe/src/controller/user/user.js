@@ -11,7 +11,7 @@ module.exports = class extends Base {
       let code = this.post()
       // 小程序AppKey、AppSecret
       let client_id = {client_id:"MLeAyMOeUKRKommN34z2aXE1l1o0GNc1"}
-      let sk = {sk:"zUxg6jVlqKCC1kPIYsgpRSbA1WXioDXQ"}
+      let sk = {sk:"g4N1HX48T2FeaaDVoMAmPvCQ6cBEW0Li"}
       // 生成请求参数
       let param = Object.assign(code,client_id,sk)
       // 获取用户唯一标识

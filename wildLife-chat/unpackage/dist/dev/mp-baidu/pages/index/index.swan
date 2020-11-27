@@ -1,1 +1,1 @@
-<view class="container" style="{{'height:'+(Heigh*2+'rpx')+';'+('width:'+(Width*2+'rpx')+';')}}"><image class="img" style="{{'height:'+(Heigh*2+'rpx')+';'+('width:'+(Width*2+'rpx')+';')}}" src="../../static/img/bg.png"></image><button class="btn" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['bdGetUserInfo',['$event']]]]]}}" bindgetuserinfo="__e">授权登录</button></view>
+<view class="container"><button class="btn" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['bdGetUserInfo',['$event']]]]]}}" bindgetuserinfo="__e">授权登录</button></view>

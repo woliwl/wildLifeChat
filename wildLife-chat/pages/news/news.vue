@@ -133,7 +133,7 @@
     .newsBox{
         width: 100%;
         position: fixed;
-        top: 201rpx;
+        top: 101rpx;
         .newsList{
             width: 100%;
             height: 140rpx;

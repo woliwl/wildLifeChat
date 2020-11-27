@@ -233,7 +233,8 @@ var _currentDate = _interopRequireDefault(__webpack_require__(/*! ../lib/current
         (0, _chat.storeChat)(userContent).then(function (res) {
           _this2.textMsg = '';
         });
-        this.getReplys(userContent);
+        setTimeout(this.getReplys(userContent), 5000);
+
         this.scrollToBottom();
       }
     },

@@ -101,7 +101,8 @@
                     storeChat(userContent).then(res => {
                         this.textMsg = ''
                     })
-                    this.getReplys(userContent)
+                    setTimeout(this.getReplys(userContent),5000)
+                    
                     this.scrollToBottom()
                 }
             },
@@ -333,20 +334,21 @@
     // 聊天语句面板
     .chatbox{
         width: 100%;
-        height: 400rpx;
-        background: #aaecb0;
+        // height: 400rpx;
+        background: #f1f1f1;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
+        
+        color: #fff;
         .userChatlist{
-            background: #F2F2F2;
+            background: #00C0A5;
             padding: 0 10rpx;
             max-width: 100%;
             border-radius: 10rpx;
-            height: 50rpx;
+            height: 60rpx;
             line-height: 50rpx;
             font-size: 24rpx;
+            margin: 10px 10px;
             .text {
                 display: inline-block;
                 *display: inline;

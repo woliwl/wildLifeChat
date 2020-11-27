@@ -1,6 +1,6 @@
 <template>
-	<view class="container" :style="{'height':Heigh*2 + 'rpx','width':Width*2 + 'rpx'}">
-        <image src="../../static/img/bg.png" :style="{'height':Heigh*2 + 'rpx','width':Width*2 + 'rpx'}" class="img"></image>
+	<view class="container">
+        <!-- <image src="../../static/img/bg.png" :style="{'height':Heigh*2 + 'rpx','width':Width*2 + 'rpx'}" class="img"></image> -->
 		<button open-type="getUserInfo" @getuserinfo = "bdGetUserInfo" class="btn">授权登录</button>
 	</view>
 </template>
@@ -75,6 +75,11 @@
 
 <style lang="scss">
 	.container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url('../../static/img/bg.png');
+        background-size: 100% 100%;
 		.img{
             position: fixed;
             top: 0;
